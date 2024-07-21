@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Chat</title>
+    <link rel="stylesheet" href="{% static 'css/chat-style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Create New Chat</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="chat_name" placeholder="Chat Name" required>
+            <button type="submit">Create Chat</button>
+        </form>
+    </div>
+</body>
+</html>
