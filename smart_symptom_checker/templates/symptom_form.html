@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Symptom Checker</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Symptom Checker</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="core_symptoms">Core Symptoms:</label>
+                <textarea id="core_symptoms" name="core_symptoms" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="duration_weeks">Symptom Duration (weeks):</label>
+                <input type="number" id="duration_weeks" name="duration_weeks" required>
+            </div>
+            <div class="form-group">
+                <label for="severity">Symptom Severity:</label>
+                <select id="severity" name="severity" required>
+                    <option value="mild">Mild</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="severe">Severe</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Symptom Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="associated_symptoms">Associated Symptoms:</label>
+                <input type="text" id="associated_symptoms" name="associated_symptoms">
+            </div>
+            <div class="form-group">
+                <label for="medical_history">Medical History:</label>
+                <input type="text" id="medical_history" name="medical_history">
+            </div>
+            <div class="form-group">
+                <label for="lifestyle_factors">Lifestyle Factors:</label>
+                <input type="text" id="lifestyle_factors" name="lifestyle_factors">
+            </div>
+            <div class="form-group">
+                <label for="recent_exposures">Recent Exposures:</label>
+                <input type="text" id="recent_exposures" name="recent_exposures">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

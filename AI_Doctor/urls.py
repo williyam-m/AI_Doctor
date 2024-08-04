@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('', include('chat.urls')),
+    path('', include('smart_symptom_checker.urls')),
 ]
