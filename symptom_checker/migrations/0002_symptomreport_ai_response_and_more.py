@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('smart_symptom_checker', '0001_initial'),
+        ('symptom_checker', '0001_initial'),
     ]
 
     operations = [

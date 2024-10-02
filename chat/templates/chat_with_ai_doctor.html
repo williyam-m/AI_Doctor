@@ -13,7 +13,7 @@
             <h2>Chat History</h2>
             <ul>
                 {% for chat in chats %}
-                    <li><a href="/chat_with_ai_doctor/{{ chat.id }}">{{ chat.chat_name }}</a></li>
+                    <li><a href="/chat/{{ chat.id }}">{{ chat.chat_name }}</a></li>
                 {% endfor %}
             </ul>
             <a href="{% url 'create_chat' %}">Create New Chat</a>

@@ -10,7 +10,7 @@ genai.configure(api_key=settings.GEMINI_API_KEY)
 model = genai.GenerativeModel(settings.GEMINI_MODEL)
 
 @csrf_exempt
-def smart_symptom_checker(request):
+def symptom_checker(request):
     if request.method == 'POST':
         core_symptoms = request.POST['core_symptoms']
         duration_weeks = request.POST['duration_weeks']

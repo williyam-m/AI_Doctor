@@ -27,7 +27,7 @@ def chat_with_ai_doctor(request, chat_id=None):
         chat.messages.append({"user": user_input, "bot": ai_response})
         chat.save()
 
-        return redirect(f'/chat_with_ai_doctor/{chat_id}')
+        return redirect(f'/chat/{chat_id}')
 
     user_id = request.user.id
     chats = Chat.objects.filter(user_id=user_id).order_by('-created_date')
@@ -50,6 +50,6 @@ def create_chat(request):
             created_date=timezone.now()
         )
         chat.save()
-        return redirect(f'/chat_with_ai_doctor/{chat.id}')
+        return redirect(f'/chat/{chat.id}')
     return render(request, 'create_chat.html')
 

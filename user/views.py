@@ -20,20 +20,20 @@ def register(request):
         username_pattern = re.compile(r'^[a-zA-Z0-9._-]+$')
         if not username_pattern.match(username):
             messages.info(request, 'Invalid username!')
-            return redirect('/register')
+            return redirect('/user/register')
 
         email_pattern = re.compile(r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$')
         if not email_pattern.match(email):
             messages.info(request, 'Invalid email address!')
-            return redirect('/register')
+            return redirect('/user/register')
 
         if password == confirm_password:
             if User.objects.filter(email=email).exists():
                 messages.info(request, 'Email Taken')
-                return redirect('/register')
+                return redirect('/user/register')
             elif User.objects.filter(username=username).exists():
                 messages.info(request, 'Username Taken')
-                return redirect('/register')
+                return redirect('/user/register')
             else:
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save()
@@ -44,7 +44,7 @@ def register(request):
                 return redirect('/')
         else:
             messages.info(request, 'Password Not Matching')
-            return redirect('/register')
+            return redirect('/user/register')
 
     else:
         return render(request, 'register.html')
@@ -62,7 +62,7 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request, 'Credentials Invalid')
-            return redirect('login')
+            return redirect('/user/login')
 
     else:
         return render(request, 'login.html')
@@ -71,4 +71,4 @@ def login(request):
 @login_required(login_url='login')
 def logout(request):
     auth.logout(request)
-    return redirect('/login')
+    return redirect('/user/login')
