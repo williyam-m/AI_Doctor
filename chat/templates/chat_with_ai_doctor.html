@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with an AI Doctor</title>
+    <link rel="stylesheet" href="{% static 'css/chat-style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Chat History</h2>
+            <ul>
+                {% for chat in chats %}
+                    <li><a href="/chat_with_ai_doctor/{{ chat.id }}">{{ chat.chat_name }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'create_chat' %}">Create New Chat</a>
+        </div>
+        <div class="chat-container">
+            <h2>Chat with an AI Doctor</h2>
+            <div class="chat-box" id="chat-box">
+                {% if chat %}
+                    {% for message in chat.messages %}
+                        <div class="message">
+                            <img src="{% static 'images/user.png' %}" alt="User" class="avatar">
+                            <p><strong>User:</strong> {{ message.user }}</p>
+                        </div>
+                        <div class="message response">
+                            <img src="{% static 'images/bot.png' %}" alt="AI Doctor" class="avatar">
+                            <p><strong>AI Doctor:</strong> {{ message.bot }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Select a chat from the left to view messages.</p>
+                {% endif %}
+            </div>
+            {% if chat %}
+                <form id="chat-form" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="chat_id" value="{{ chat.id }}">
+                    <input type="text" id="user-input" name="user_input" placeholder="Type your message..." required>
+                    <button type="submit">Send</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        document.getElementById('chat-form').onsubmit = function(event) {
+            event.preventDefault();
+            this.submit();
+        };
+    </script>
+</body>
+</html>
