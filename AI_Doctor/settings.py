@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'symptom_checker',
     'dashboard',
     'lab_report',
+    'prescription_scanner',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'symptom_checker', 'static'),
     os.path.join(BASE_DIR, 'dashboard', 'static'),
     os.path.join(BASE_DIR, 'lab_report', 'static'),
+    os.path.join(BASE_DIR, 'prescription_scanner', 'static'),
 ]
 
 

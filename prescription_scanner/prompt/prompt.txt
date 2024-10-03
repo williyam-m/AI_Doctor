@@ -1,0 +1,22 @@
+Generate a detailed report based on the provided doctor’s prescription. The report should include the following sections:
+
+
+1. Prescription Summary:
+Provide a brief overview of the prescribed medications, including the names and dosages of each medication.
+
+2. Medication Details:
+For each prescribed medication, include the following:
+Name of the medication
+Dosage
+Frequency of administration
+Duration of the course
+Specific instructions for use (e.g., take with food, avoid certain activities)
+
+3. Purpose of Medications:
+Explain the medical condition being treated and the purpose of each prescribed medication.
+
+4. Lifestyle and Dietary Recommendations:
+Offer guidance on lifestyle changes and dietary adjustments that may support the treatment and improve the patient’s health.
+
+
+Ensure that the report is clear, professional, and easy to understand, making it suitable for both the patient and their healthcare provider.

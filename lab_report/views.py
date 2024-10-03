@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import google.generativeai as genai
 from django.conf import settings
+import markdown
 import uuid
 import os
 
@@ -31,6 +32,7 @@ def lab_report(request):
         response = model.generate_content([uploaded_image, f"\n\n {prompt}"])
 
         ai_response = response.text
+        ai_response = markdown.markdown(ai_response)
 
         if os.path.exists(image_path):
             os.remove(image_path)
