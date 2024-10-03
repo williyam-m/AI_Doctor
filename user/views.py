@@ -7,8 +7,7 @@ import os
 import re
 import uuid
 
-def home(request):
-    return render(request, 'home.html')
+
 
 def register(request):
     if request.method == 'POST':

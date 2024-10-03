@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'chat',
-    'symptom_checker'
+    'symptom_checker',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -131,6 +132,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'user', 'static'),
     os.path.join(BASE_DIR, 'chat', 'static'),
     os.path.join(BASE_DIR, 'symptom_checker', 'static'),
+    os.path.join(BASE_DIR, 'dashboard', 'static'),
 ]
 
 
