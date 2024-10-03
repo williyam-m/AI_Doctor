@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'chat',
     'symptom_checker',
     'dashboard',
+    'lab_report',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'chat', 'static'),
     os.path.join(BASE_DIR, 'symptom_checker', 'static'),
     os.path.join(BASE_DIR, 'dashboard', 'static'),
+    os.path.join(BASE_DIR, 'lab_report', 'static'),
 ]
 
 
