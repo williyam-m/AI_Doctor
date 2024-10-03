@@ -1,55 +1,99 @@
 body {
-    background-color: #000;
-    color: #fff;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: black;
 }
-h3 {
-    color: #00bfff;
+
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 10px 0;
     text-align: center;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 20px 0 20px;
 }
-.form-group {
-    margin-bottom: 15px;
+
+.signup-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+h1 {
+    margin: 0;
+    font-size: 15px;
+}
+
 label {
-    display: block;
-    margin-bottom: 5px;
-    color: #00bfff;
+    font-weight: bold;
+    color: black;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 8px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #333;
-    color: #fff;
+    transition: border-color 0.3s;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
 }
-button {
-    float:right;
-    width:90%;
-    padding: 8px;
-    background-color: #00bfff;
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2874f0;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2874f0;
+    color: #fff;
     border: none;
     border-radius: 4px;
-    color: #fff;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
-button:hover {
-    background-color: #0099cc;
+
+.btn:hover {
+    background-color: #0056b3;
 }
+
 .messages {
-    background-color: #ff3333;
-    padding: 10px;
-    border-radius: 4px;
     margin-bottom: 15px;
-    text-align: center;
-    color: #fff;
+    padding: 10px;
+    background-color: #ffdddd;
+    border: 1px solid #f44336;
+    border-radius: 4px;
 }
-*{
-font-size:12px;
+
+p {
+    text-align: center;
+    color: black;
+}
+
+a {
+    color: #2874f0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
