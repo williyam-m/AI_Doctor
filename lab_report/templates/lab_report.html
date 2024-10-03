@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report</title>
+    <link rel="stylesheet" href="{% static 'css/lab-report-style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lab Report</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image">Select image to upload:</label>
+            <input type="file" name="image" id="image" required>
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+        {% if response %}
+            <h2>AI Analysis:</h2>
+            <p>{{ response }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

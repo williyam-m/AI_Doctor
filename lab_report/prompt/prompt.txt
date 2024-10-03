@@ -1,0 +1,24 @@
+Generate a comprehensive lab test report from the provided lab test image. The report should include the following sections:
+
+1. Detailed Results:
+Provide a comprehensive breakdown of the test results. Include numerical values, units, and reference ranges for each parameter tested. Clearly differentiate between normal and abnormal results.
+
+2. Interpretation of Results:
+Offer a detailed explanation of what the test results mean. Highlight any abnormalities and discuss their potential health implications. Explain how the results compare to normal reference ranges.
+
+3.Recommendations:
+Suggest actions based on the test results. This may include lifestyle changes, dietary adjustments, or further testing. Provide clear and actionable steps for the patient to follow.
+
+4. Prescribed Medications:
+List any medications recommended as a result of the test. Include detailed information on dosages, instructions for use, and any important notes regarding the medication.
+
+5. Follow-Up Tests:
+Recommend any additional tests or follow-up appointments needed to monitor or further investigate the patient's condition. Explain the purpose of each recommended follow-up test.
+
+6. Lifestyle and Dietary Advice:
+Provide guidance on lifestyle modifications and dietary changes that could improve the patient's health based on the test results. Include specific recommendations tailored to the patient's condition.
+
+7. Doctor’s Notes and Observations:
+Include additional insights, observations, and advice from the healthcare provider. Address the patient's overall health, specific concerns, and any other relevant information.
+
+Ensure that the report is clear, professional, and easy to understand, suitable for both the patient and their healthcare provider.
