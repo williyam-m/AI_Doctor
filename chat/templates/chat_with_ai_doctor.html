@@ -10,30 +10,38 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2>Chat History</h2>
-            <ul>
-                {% for chat in chats %}
-                    <li><a href="/chat/{{ chat.id }}">{{ chat.chat_name }}</a></li>
-                {% endfor %}
-            </ul>
-            <a href="{% url 'create_chat' %}">Create New Chat</a>
+            <a href="{% url 'create_chat' %}" class="create-chat-button">Create New Chat</a>
+            {% if chats %}
+                <ul>
+                    {% for chat in chats %}
+                        <li>
+                            <a href="/chat/{{ chat.id }}" class="chat-name">
+                                {{ chat.chat_name|truncatechars:20 }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No chats available.</p>
+            {% endif %}
         </div>
         <div class="chat-container">
-            <h2>Chat with an AI Doctor</h2>
+            <h4>Chat with an AI Doctor</h4>
             <div class="chat-box" id="chat-box">
                 {% if chat %}
                     {% for message in chat.messages %}
-                        <div class="message">
-                            <img src="{% static 'images/user.png' %}" alt="User" class="avatar">
-                            <p><strong>User:</strong> {{ message.user }}</p>
+                        <div class="message user-message">
+                            <p>{{ message.user }}</p>
                         </div>
-                        <div class="message response">
+                        <div class="message bot-message">
                             <img src="{% static 'images/bot.png' %}" alt="AI Doctor" class="avatar">
-                            <p><strong>AI Doctor:</strong> {{ message.bot }}</p>
+                            <p>{{ message.bot }}</p>
                         </div>
                     {% endfor %}
                 {% else %}
-                    <p>Select a chat from the left to view messages.</p>
+                    <a href="{% url 'create_chat' %}"><div class="response" align="center">
+                    Create New Chat
+                    </div></a>
                 {% endif %}
             </div>
             {% if chat %}
