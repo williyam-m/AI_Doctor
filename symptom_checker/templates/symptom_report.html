@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Symptom Report Details</title>
-    <link rel="stylesheet" href="{% static 'css/symptom-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/symptom-report-style.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Symptom Report Details</h1>
-        <button onclick="toggleUserInput()">Show/Hide User Input</button>
-        <div id="userInput" style="display: none;">
-            <h2>User Input</h2>
+        <button class="toggle-button" onclick="toggleUserInput()">Show/Hide Symptom</button>
+        <div id="userInput" class="user-input">
+            <h2>Symptom</h2>
             <p><strong>Core Symptoms:</strong> {{ symptom_report.core_symptoms }}</p>
             <p><strong>Symptom Duration (weeks):</strong> {{ symptom_report.duration_weeks }}</p>
             <p><strong>Symptom Severity:</strong> {{ symptom_report.severity }}</p>
@@ -23,8 +23,8 @@
             <p><strong>Lifestyle Factors:</strong> {{ symptom_report.lifestyle_factors }}</p>
             <p><strong>Recent Exposures:</strong> {{ symptom_report.recent_exposures }}</p>
         </div>
-        <h2>AI Response</h2>
-        <div id="aiResponse"></div>
+        <h2>AI Report</h2>
+        <div id="aiResponse" class="ai-response"></div>
     </div>
 
     <script>

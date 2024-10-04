@@ -21,36 +21,25 @@ def symptom_checker(request):
         lifestyle_factors = request.POST['lifestyle_factors']
         recent_exposures = request.POST['recent_exposures']
 
-        # Create the prompt for the AI
-        prompt = (
-            f"Core Symptoms: {core_symptoms}\n"
-            f"Symptom duration: {duration_weeks} weeks\n"
-            f"Symptom severity: {severity}\n"
-            f"Symptom location: {location}\n"
-            f"Associated symptoms: {associated_symptoms}\n"
-            f"Medical history: {medical_history}\n"
-            f"Lifestyle factors: {lifestyle_factors}\n"
-            f"Recent exposures: {recent_exposures}\n\n"
-            "Potential Diagnosis:\n"
-            "Likely conditions: A list of possible diseases or conditions based on the given symptoms.\n"
-            "Differential diagnosis: If multiple conditions are possible, provide a brief comparison of their symptoms and characteristics.\n"
-            "Symptom Explanation:\n"
-            "Cause of symptoms: Explain the underlying reasons for the experienced symptoms.\n"
-            "Effects of condition: Describe the potential consequences of the condition if left untreated.\n"
-            "Treatment and Prevention:\n"
-            "Recommended treatment: Suggest appropriate treatments, including medications, lifestyle changes, or over-the-counter remedies.\n"
-            "Prevention measures: Offer advice on how to prevent the condition or reduce its severity.\n"
-            "When to seek medical attention: Clearly indicate when it's necessary to consult a healthcare professional.\n"
-            "Additional Information:\n"
-            "Risk factors: Identify factors that increase the likelihood of developing the condition.\n"
-            "Prognosis: Provide information about the expected course of the illness.\n"
-            "Self-care tips: Offer general health advice to support recovery."
-        )
+        prompt_message_path = os.path.join(settings.BASE_DIR, 'symptom_checker', 'prompt', 'prompt.txt')
+
+        with open(prompt_message_path, 'r', encoding='utf-8') as file:
+            prompt = file.read()
+
+        prompt = prompt.format(
+            core_symptoms = core_symptoms,
+            duration_weeks = duration_weeks,
+            severity = severity,
+            location = location,
+            associated_symptoms = associated_symptoms,
+            medical_history = medical_history,
+            lifestyle_factors = lifestyle_factors,
+            recent_exposures = recent_exposures)
 
         response = model.generate_content(prompt)
         ai_response = response.text
 
-        # Save the symptom report and AI response
+        # save the symptom report and ai response
         symptom_report = SymptomReport(
             user_id=request.user.id,
             core_symptoms=core_symptoms,
@@ -65,19 +54,16 @@ def symptom_checker(request):
         )
         symptom_report.save()
 
-        return redirect('symptom_detail', id=symptom_report.id)
+        return redirect('symptom_report', id=symptom_report.id)
 
-    return render(request, 'symptom_form.html')
+    return render(request, 'symptom_checker.html')
 
-def symptom_detail(request, id):
+def symptom_report(request, id):
     symptom_report = get_object_or_404(SymptomReport, id=id)
-    return render(request, 'symptom_detail.html', {'symptom_report': symptom_report})
+    return render(request, 'symptom_report.html', {'symptom_report': symptom_report})
 
-def symptom_history(request):
+def symptom_dashboard(request):
     reports = SymptomReport.objects.filter(user_id=request.user.id).order_by('-created_date')
-    paginator = Paginator(reports, 10)  # 10 reports per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'symptom_history.html', {'page_obj': page_obj})
+    return render(request, 'symptom_dashboard.html', {'reports': reports})
 
 

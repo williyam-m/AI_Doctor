@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/symptom-style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Symptom Checker</h1>
+        <a href="{% url 'symptom_checker' %}"><button class="response">Check Now</button></a>
+    </div>
+    <div class="container">
+        <ul>
+            {% for report in reports %}
+                <li><a href="{% url 'symptom_report' id=report.id %}">Report {{ report.id }} - {{ report.created_date }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
