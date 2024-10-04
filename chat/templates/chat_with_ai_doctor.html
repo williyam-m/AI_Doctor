@@ -26,7 +26,7 @@
             {% endif %}
         </div>
         <div class="chat-container">
-            <h4>Chat with an AI Doctor</h4>
+            <h4>Chat with an AI Doctor ✨</h4>
             <div class="chat-box" id="chat-box">
                 {% if chat %}
                     {% for message in chat.messages %}
@@ -40,7 +40,7 @@
                     {% endfor %}
                 {% else %}
                     <a href="{% url 'create_chat' %}"><div class="response" align="center">
-                    Create New Chat
+                    Create New Chat ✨
                     </div></a>
                 {% endif %}
             </div>

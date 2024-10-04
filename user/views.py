@@ -6,6 +6,37 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 import re
 import uuid
+from .models import UserProfile
+
+@login_required
+def profile(request):
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    errors = {}
+
+    if request.method == 'POST':
+        gender = request.POST.get('gender')
+        age = request.POST.get('age')
+        height = request.POST.get('height')
+        weight = request.POST.get('weight')
+
+        if not gender:
+            errors['gender'] = 'Gender is required.'
+        if not age or int(age) < 0 or int(age) > 120:
+            errors['age'] = 'Please enter a valid age.'
+        if not height or int(height) <= 0 or int(height) > 300:
+            errors['height'] = 'Please enter a valid height in cm.'
+        if not weight or int(weight) <= 0 or int(weight) > 500:
+            errors['weight'] = 'Please enter a valid weight in kg.'
+
+        if not errors:
+            user_profile.gender = gender
+            user_profile.age = age
+            user_profile.height = height
+            user_profile.weight = weight
+            user_profile.save()
+            return redirect('profile')
+
+    return render(request, 'profile.html', {'user_profile': user_profile, 'errors': errors})
 
 
 
