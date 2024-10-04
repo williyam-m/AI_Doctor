@@ -1,14 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Doctor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Doctor Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard-style.css' %}">
 </head>
 <body>
-<a href="/user/" >user</a><br>
-<a href="/chat/" >chat</a><br>
-<a href="/symptom_checker/" >symptom checker</a><br>
-<a href="/lab_report/" >Lab Report</a><br>
-<a href="/prescription_scanner/" >Prescription Scanner</a><br>
+    <header class="header">
+        <div class="header-left">
+            <h1>AI Doctor</h1>
+        </div>
+        <div class="header-right">
+            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+        </div>
+    </header>
+    <div class="container">
+        <a href="/user/" class="user-box">
+            <span>👋 Hello, {{ request.user.username }}!</span>
+            <span class="arrow">&rarr;</span>
+        </a>
+        <div class="link-boxes">
+            <div class="row">
+                <a href="/chat/" class="link-box">
+                    <span>Chat with an AI Doctor✨<span class="arrow">&rarr;</span></span>
+                    <img src="{% static 'images/ai-assistant.png' %}" alt="Chat">
+                </a>
+                <a href="/symptom_checker/" class="link-box small">
+                    <span>Symptom Checker ✨<span class="arrow">&rarr;</span></span>
+                </a>
+            </div>
+            <div class="row">
+                <a href="/lab_report/" class="link-box small">
+                    <span>Lab Report ✨<span class="arrow">&rarr;</span></span>
+                </a>
+                <a href="/prescription_scanner/" class="link-box small">
+                    <span>Prescription Scanner ✨<span class="arrow">&rarr;</span></span>
+                </a>
+            </div>
+            <div class="row">
+                <div class="link-box blank-box">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

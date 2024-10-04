@@ -21,8 +21,6 @@
                         </li>
                     {% endfor %}
                 </ul>
-            {% else %}
-                <p>No chats available.</p>
             {% endif %}
         </div>
         <div class="chat-container">
@@ -34,7 +32,7 @@
                             <p>{{ message.user }}</p>
                         </div>
                         <div class="message bot-message">
-                            <img src="{% static 'images/bot.png' %}" alt="AI Doctor" class="avatar">
+                            <img src="{% static 'images/bot.png' %}" alt="" class="avatar">
                             <p>{{ message.bot }}</p>
                         </div>
                     {% endfor %}

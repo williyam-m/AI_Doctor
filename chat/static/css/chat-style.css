@@ -15,7 +15,6 @@ body {
     height: 100%;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -26,15 +25,12 @@ body {
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     overflow-y: auto;
     backdrop-filter: blur(10px);
-    border-radius: 12px;
 }
-
 .sidebar h2 {
     color: #A100FF;
     font-size: 20px;
     margin-bottom: 10px;
 }
-
 .sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -44,7 +40,6 @@ body {
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .chat-name {
     display: block;
     color: #A100FF;
@@ -59,7 +54,6 @@ body {
 color : white;
     background: rgba(255, 255, 255, 0.3);
 }
-
 .create-chat-button {
     display: block;
     margin-top: 10px;
@@ -70,7 +64,6 @@ color : white;
     border-radius: 4px;
     text-align: center;
 }
-
 .create-chat-button:hover {
 color: white;
     background-color: rgba(255, 255, 255, 0.3);
@@ -82,14 +75,12 @@ color: white;
     display: flex;
     flex-direction: column;
 }
-
 .chat-container h4 {
     color: #A100FF;
     font-size: 15px;
     text-align: center;
     margin-top: 5px;
 }
-
 .chat-box {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 10px;
@@ -106,15 +97,12 @@ color: white;
     align-items: flex-start;
     margin-bottom: 10px;
 }
-
 .user-message {
     justify-content: flex-end;
 }
-
 .bot-message {
     justify-content: flex-start;
 }
-
 .user-message p {
     background-color: rgba(30, 30, 30, 0.8);
     color: #fff;
