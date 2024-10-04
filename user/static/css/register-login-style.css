@@ -1,17 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-image: url('../images/doctor-to-ai.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
     color: black;
 }
 
 .header {
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
+    background: #A100FF;
     padding: 10px 0;
+    color :white;
     text-align: center;
-    border-radius: 0 0 16px 16px;
+    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -63,19 +66,14 @@ input[type="password"]:focus {
 .btn {
     width: 100%;
     padding: 10px;
-    background-color: #2874f0;
-    color: #fff;
+    background-color: #A100FF;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
 }
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
 .messages {
     margin-bottom: 15px;
     padding: 10px;
@@ -83,14 +81,12 @@ input[type="password"]:focus {
     border: 1px solid #f44336;
     border-radius: 4px;
 }
-
 p {
     text-align: center;
     color: black;
 }
-
 a {
-    color: #2874f0;
+    color: #A100FF;
     text-decoration: none;
 }
 

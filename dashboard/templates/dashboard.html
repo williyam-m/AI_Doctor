@@ -17,10 +17,16 @@
         </div>
     </header>
     <div class="container">
-        <a href="/user/" class="user-box">
-            <span>👋 Hello, {{ request.user.username }}!</span>
-            <span class="arrow">&rarr;</span>
+            {% if request.user.is_anonymous %}
+        <a href="/user/register" class="user-box">
+            <span>Register for FREE!</span>
         </a>
+            {% else %}
+            <a href="/user" class="user-box">
+            <span>👋 Hello, {{ request.user.username }}!</span>
+             </a>
+            {% endif %}
+            <span class="arrow">&rarr;</span>
         <div class="link-boxes">
             <div class="row">
                 <a href="/chat/" class="link-box">

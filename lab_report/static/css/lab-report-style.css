@@ -1,15 +1,18 @@
 body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
+font-family: Arial, sans-serif;
+    color: black;
+    background-image: url('../images/doctor-to-ai.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             color: #A100FF;
         }
-
         .container {
             background: rgba(255, 255, 255, 0.8);
             border-radius: 16px;
