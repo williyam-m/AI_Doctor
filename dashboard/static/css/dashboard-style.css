@@ -115,6 +115,9 @@ background-color: #A100FF;
 height: 100px;
 margin-top: 50px;
 }
+.large-width {
+width: 50%;
+}
 .link-box img {
     position: absolute;
     top: 0;
