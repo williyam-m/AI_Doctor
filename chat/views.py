@@ -53,6 +53,7 @@ def chat_with_ai_doctor(request, chat_id=None):
 
     except Exception as e:
         return render(request, 'error.html')
+
 @login_required(login_url='login')
 def create_chat(request):
     try:

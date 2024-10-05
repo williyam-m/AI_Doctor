@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 from .models import SymptomReport
 import google.generativeai as genai
 from django.conf import settings
@@ -9,6 +10,8 @@ import os
 genai.configure(api_key=settings.GEMINI_API_KEY)
 model = genai.GenerativeModel(settings.GEMINI_MODEL)
 
+
+@login_required(login_url='login')
 @csrf_exempt
 def symptom_checker(request):
     try:
@@ -62,6 +65,7 @@ def symptom_checker(request):
     except Exception as e:
         return render(request, 'error.html')
 
+@login_required(login_url='login')
 def symptom_report(request, id):
     try:
         try:

@@ -8,7 +8,7 @@ import re
 import uuid
 from .models import UserProfile
 
-@login_required
+@login_required(login_url='login')
 def profile(request):
     try:
         user_profile, created = UserProfile.objects.get_or_create(user=request.user)
