@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .header {
     background-color: rgba(161, 0, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -17,13 +18,21 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     top: 10px;
     font-size: 14px;
 }
-
+.footer{
+margin-top:40px;
+background-color: rgba(161, 0, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    bottom: 10px;
+    font-size: 14px;
+}
 .header h1 {
     margin: 0;
     font-size: 1rem;
@@ -62,7 +71,6 @@ body {
 .user-box .arrow {
     font-size: 20px;
 }
-
 .link-boxes {
     width: 80%;
 }
@@ -89,6 +97,20 @@ body {
     align-items: flex-end;
     padding: 10px;
 }
+.testimonial{
+position: relative;
+    width: 20%;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+}
+.small:hover {
+background-color: #A100FF;
+}
 .small {
 height: 100px;
 margin-top: 50px;
@@ -106,7 +128,10 @@ margin-top: 50px;
 .link-box:hover img {
     transform: scale(1.1);
 }
-
+.user-box:hover, mark {
+color:white;
+background-color: #A100FF;
+}
 .link-box span {
     position: relative;
     z-index: 2;
@@ -121,7 +146,9 @@ margin-top: 50px;
     border-radius: 5px;
     font-size: 0.8rem;
 }
-
+.row-text{
+width:50%;
+}
 a {
     text-decoration: none;
 }

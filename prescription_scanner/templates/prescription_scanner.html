@@ -12,8 +12,8 @@
         <h1>Prescription Scanner</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <label for="image">Select image to upload:</label>
-            <input type="file" name="image" id="image" required>
+            <label for="image">Scan and digitize prescriptions quickly and accurately<br> with AI-powered text recognition.</label>
+            <input type="file" name="image" id="image" accept="image/png, image/jpg, image/jpeg" required>
             <br>
             <button type="submit">Upload</button>
         </form>

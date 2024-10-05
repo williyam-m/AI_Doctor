@@ -19,14 +19,13 @@
     <div class="container">
             {% if request.user.is_anonymous %}
         <a href="/user/register" class="user-box">
-            <span>Register for FREE!</span>
-        </a>
+            <span>Register Now!</span><span class="arrow">&rarr;</span></a>
             {% else %}
             <a href="/user" class="user-box">
-            <span>👋 Hello, {{ request.user.username }}!</span>
-             </a>
+            <span>👋 Hello, {{ request.user.username }}!</span><span class="arrow">&rarr;</span></a>
             {% endif %}
-            <span class="arrow">&rarr;</span>
+        <div align="center"><h3>Your Digital Healthcare Companion 🌟<h3></div>
+
         <div class="link-boxes">
             <div class="row">
                 <a href="/chat/" class="link-box">
@@ -44,13 +43,48 @@
                 <a href="/prescription_scanner/" class="link-box small">
                     <span>Prescription Scanner ✨<span class="arrow">&rarr;</span></span>
                 </a>
-            </div>
+            </div><br>
+            <div align="center">
+            <h2>Revolutionize Your Healthcare Experience with AI Doctor</h2>
+            <p>Your health, our priority. Access immediate, intelligent medical support from the comfort of your home.</p>
+            </div><br>
             <div class="row">
-                <div class="link-box blank-box">
-                    <span></span>
+                <span class="link-box">
+                    <img src="{% static 'images/ai-robot.jpg' %}" alt="Chat">
+                </span>
+                <span class="row-text"><br>
+                    <span><b>Why Choose AI Doctor? 🌟</b><br><br>
+<b>24/7 Availability</b> Get medical advice anytime, anywhere. 🕒<br>
+                        <b>Instant Results</b> Receive immediate feedback and analysis. (<mark>You don’t need to wait in a queue! 😊</mark>)<br>
+<b>Accurate Insights</b> Leverage cutting-edge AI technology for precision. (Healthcare at your fingertips! 👆)<br>
+                </span>
+                </span>
                 </div>
+            <h2>Testimonials</h2>
+                <div class="row">
+                    <span class="testimonial">
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                    <p>Having access to medical advice 24/7 gives me such <b>peace of mind</b>.</p>
+                        <p> - Emily R</p>
+                </span>
+                <span class="testimonial">
+                    <p>⭐️⭐️⭐️⭐️⭐️</p>
+                    <p>The prescription scanner is so easy to use. I never miss a dose now!</p>
+                    <p> - Mark T.</p>
+                </span>
+                <span class="testimonial">
+                    <p>⭐️⭐️⭐️⭐️</p>
+                    <p>AI Doctor has transformed how I manage my health. The instant feedback and detailed lab reports are game-changers!"</p>
+                    <p> - Sarah J</p>
+                </span>
             </div>
         </div>
     </div>
+<footer class="footer">
+    <div align="center">
+        AI Doctor<br>
+© 2024 AI Doctor. All rights reserved.
+    </div>
+    </footer>
 </body>
 </html>

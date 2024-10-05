@@ -32,7 +32,6 @@ def chat_with_ai_doctor(request, chat_id=None):
         response = model.generate_content(f'{prompt}: {user_input}')
         ai_response = response.text
 
-        ai_response = markdown.markdown(ai_response)
         chat.messages.append({"user": user_input, "bot": ai_response})
         chat.save()
 

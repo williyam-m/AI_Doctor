@@ -12,8 +12,8 @@
         <h1>Lab Report</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <label for="image">Select image to upload:</label>
-            <input type="file" name="image" id="image" required>
+            <label for="image">Generate and Analyze lab test reports<br> with precision using AI technology.</label>
+            <input type="file" name="image" id="image" accept="image/png, image/jpg, image/jpeg" required>
             <br>
             <button type="submit">Upload</button>
         </form>
